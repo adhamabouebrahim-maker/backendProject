@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
-// GET all grades
+
 router.get('/', (req, res) => {
   db.query('SELECT * FROM grade', (err, results) => {
     if (err) return res.status(500).send(err);
@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
   });
 });
 
-// POST a new grade
+
 router.post('/', (req, res) => {
   const { ID, name, mid, project, finalExam, finalgrade } = req.body;
   const sql = 'INSERT INTO grade (ID, name, mid, project, finalExam, finalgrade) VALUES (?, ?, ?, ?, ?, ?)';
@@ -20,7 +20,7 @@ router.post('/', (req, res) => {
   });
 });
 
-// DELETE grade by ID
+
 router.delete('/:id', (req, res) => {
   const id = req.params.id;
   db.query('DELETE FROM grade WHERE ID=?', [id], (err, result) => {
