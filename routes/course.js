@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
-// GET all courses
+
 router.get('/', (req, res) => {
   db.query('SELECT * FROM course', (err, results) => {
     if (err) return res.status(500).send(err);
@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
   });
 });
 
-// POST a new course (add this)
+
 router.post('/', (req, res) => {
   const { stdID, name, email, phone, courseType, department } = req.body;
 
@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
   });
 });
 
-// DELETE course by stdID
+
 router.delete('/:id', (req, res) => {
   const id = req.params.id;
   db.query('DELETE FROM course WHERE stdID=?', [id], (err, result) => {
