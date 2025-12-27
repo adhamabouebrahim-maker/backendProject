@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 
-const courseRoutes = require("./routes/course");
-const gradeRoutes = require("./routes/grade");
+const courseRoutes = require("https://student-new-frontend.onrender.com");
+const gradeRoutes = require("https://student-new-frontend.onrender.com");
 
 const app = express();
 
